@@ -1,0 +1,5 @@
+*
+!*/
+!/.gitignore
+!/.rsync_exclude
+!*.py

@@ -1,0 +1,43 @@
+# !*/
+!/.gitignore
+__pycache__
+.idea
+.vscode
+# !/*.py
+
+*.zip
+*.pth
+*.ckpt
+*.exe
+*.pyc
+*.log
+*.csv
+*.jsonc
+*.json5
+*.xlsx
+*.xls
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pth
+*.html
+*.js
+*.png
+*.jpg
+# *.md
+*.txt
+*.css
+*.json
+*.jsonc
+*.json5
+
+
+
+__pycache__
+.idea
+pytorch3d
+
+!requirements.txt
+!media
+!media/poster.jpg
