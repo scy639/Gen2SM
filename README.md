@@ -18,7 +18,7 @@ Please refer to [Extreme-Two-View-Geometry-From-Object-Poses-with-Diffusion-Mode
 `python eval_naviTestset.py` and `python eval_gsoTestset.py`
 
 ### To eval on your custom testset:
-1. Refer to `gso.py` or `navi.py` to implement `CustomDatabase` and `CustomDataset`
+1. Refer to `Dataset/gso.py` or `Dataset/navi.py` to create a new file implementing `CustomDatabase` and `CustomDataset`
 2. Run `python eval_custom.py`. You may modify relevant configurations in eval_custom.py if needed.
 
 ### Limitation
