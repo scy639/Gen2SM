@@ -12,17 +12,30 @@ Generalizable Single-view Object Pose Estimation by Two-side Generating and Matc
 
 Please refer to [Extreme-Two-View-Geometry-From-Object-Poses-with-Diffusion-Models](https://github.com/scy639/Extreme-Two-View-Geometry-From-Object-Poses-with-Diffusion-Models)
 
-## Todo List
-- [x] Release key code
-- [ ] Release full code
+
+## Infer
+To eval on the two testsets adopted in [E2VG](https://github.com/scy639/Extreme-Two-View-Geometry-From-Object-Poses-with-Diffusion-Models):
+`python eval_naviTestset.py` and `python eval_gsoTestset.py`
+
+To eval on your custom testset:
+1. Refer to `gso.py` or `navi.py` to implement `CustomDatabase` and `CustomDataset`
+2. Run `python xxx.py`. You may modify relevant configurations in xxx.py if needed.
+
+### Limitation
+The current code version assumes that the input images:
+- do not exhibit in-plane object rotation
+- are captured from viewpoints on the upper hemisphere of the object (i.e., the camera is positioned above the object)
+
 
 ## Citation
 ```
-@article{sun2024generalizable,
-  title={Generalizable Single-view Object Pose Estimation by Two-side Generating and Matching},
-  author={Sun, Yujing and Sun, Caiyi and Liu, Yuan and Ma, Yuexin and Yiu, Siu Ming},
-  journal={arXiv preprint arXiv:2411.15860},
-  year={2024}
+@InProceedings{sun2024generalizable,
+    title     = {Generalizable Single-View Object Pose Estimation by Two-Side Generating and Matching},
+    author    = {Sun, Yujing and Sun, Caiyi and Liu, Yuan and Ma, Yuexin and Yiu, Siu Ming},
+    booktitle = {Proceedings of the Winter Conference on Applications of Computer Vision (WACV)},
+    month     = {February},
+    year      = {2025},
+    pages     = {545-556}
 }
 ```
 
