@@ -14,12 +14,12 @@ Please refer to [Extreme-Two-View-Geometry-From-Object-Poses-with-Diffusion-Mode
 
 
 ## Infer
-To eval on the two testsets adopted in [E2VG](https://github.com/scy639/Extreme-Two-View-Geometry-From-Object-Poses-with-Diffusion-Models):
+### To eval on the two testsets adopted in [E2VG](https://github.com/scy639/Extreme-Two-View-Geometry-From-Object-Poses-with-Diffusion-Models):
 `python eval_naviTestset.py` and `python eval_gsoTestset.py`
 
-To eval on your custom testset:
+### To eval on your custom testset:
 1. Refer to `gso.py` or `navi.py` to implement `CustomDatabase` and `CustomDataset`
-2. Run `python xxx.py`. You may modify relevant configurations in xxx.py if needed.
+2. Run `python eval_custom.py`. You may modify relevant configurations in eval_custom.py if needed.
 
 ### Limitation
 The current code version assumes that the input images:
