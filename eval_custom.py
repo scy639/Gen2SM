@@ -25,13 +25,15 @@ if __name__=='__main__':
     confs.Ls_bsz = 2
     #------key conf for:---- refine stage-------------------------------------
     confs.Lr.Lr_latentB_bsz = 2
-    confs.Lr.num_iter = 6
+    confs.Lr.num_iter = 5
     confs.Lr.db0_iterate_strategy.interval = 2
     
     
-    mode = 'standard' # choose it based on the dataset difficulty and your trade-off between accuracy and efficiency.
+    mode = 'standard+' # choose it based on the dataset difficulty and your trade-off between accuracy and efficiency.
     if mode=='standard':
-        pass
+        confs.NUM_REF = 64
+    elif mode=='standard+':
+        confs.NUM_REF = 88;  confs.SAMPLE_BATCH_SIZE = 44;confs.bIV = 44
     elif mode=='heavy':
         confs.elev_bsz.BSZ=10
         confs.Lr.Lr_latentB_bsz = 4
