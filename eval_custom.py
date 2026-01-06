@@ -15,12 +15,12 @@ if __name__=='__main__':
     
     #--------------------------------------------configs------------------------------------------------
     #-------Works on L20/A40(46GB); if cuda OOM, keep **halving** the values below until it fits.
-    confs.SAMPLE_BATCH_SIZE = 32
-    confs.bIV = 32 # 1. NUM_REF % bIV must == 0; 2.
+    confs.SAMPLE_BATCH_SIZE = 44
+    confs.bIV = 44 # 1. NUM_REF % bIV must == 0; 2.
     #------key conf for:---- elev estimate------------------------------------
     confs.elev_bsz.BSZ=8
     #------key conf for:---- gen ref set (so called ref database in code)-----
-    confs.NUM_REF = 128
+    confs.NUM_REF = 88
     #------key conf for:---- search stage-------------------------------------
     confs.Ls_bsz = 2
     #------key conf for:---- refine stage-------------------------------------
@@ -29,25 +29,23 @@ if __name__=='__main__':
     confs.Lr.db0_iterate_strategy.interval = 2
     
     
-    mode = 'standard+' # choose it based on the dataset difficulty and your trade-off between accuracy and efficiency.
-    if mode=='standard':
-        confs.NUM_REF = 64
-    elif mode=='standard+':
-        confs.NUM_REF = 88;  confs.SAMPLE_BATCH_SIZE = 44;confs.bIV = 44
+    mode = 'standard' # choose it based on the dataset difficulty and your trade-off between accuracy and efficiency.
+    if   mode=='standard-':
+        confs.NUM_REF = 64;    confs.SAMPLE_BATCH_SIZE = 32;confs.bIV = 32
+    elif mode=='standard':
+        pass
     elif mode=='heavy':
         confs.elev_bsz.BSZ=10
+        confs.NUM_REF = 96;  confs.SAMPLE_BATCH_SIZE = 32;confs.bIV = 48
         confs.Lr.Lr_latentB_bsz = 4
-        confs.Lr.db0_iterate_strategy.interval = 1
+        confs.Lr.num_iter = 6
     elif mode=='heavy+':
         confs.elev_bsz.BSZ=10
+        confs.NUM_REF = 128
         confs.Ls_bsz = 4
         confs.Lr.Lr_latentB_bsz = 4
         confs.Lr.num_iter = 8
         confs.Lr.db0_iterate_strategy.interval = 1
-    elif mode=='light':
-        confs.elev_bsz.BSZ=5
-        confs.NUM_REF = 64
-        confs.Lr.num_iter = 4
     print(f"{mode=}")
     del mode
     
