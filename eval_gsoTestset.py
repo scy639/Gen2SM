@@ -16,7 +16,7 @@ if __name__=='__main__':
     #--------------------------------------------configs------------------------------------------------
     #-------Works on L20/A40(46GB); if cuda OOM, keep **halving** the values below until it fits.
     confs.SAMPLE_BATCH_SIZE = 32
-    confs.bIV = 48 # 1. NUM_REF % bIV must == 0; 2.
+    confs.bIV = 24 # 1. NUM_REF % bIV must == 0; 2.
     #------key conf for:---- elev estimate------------------------------------
     confs.elev_bsz.BSZ=10
     #------key conf for:---- gen ref set (so called ref database in code)-----

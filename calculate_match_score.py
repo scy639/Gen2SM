@@ -181,7 +181,7 @@ def refine(
                 if 1:
                     cond_images = img.repeat(bsz*bIV, 1, 1, 1)
                 l_l_i = [l_i[i:i + bIV] for i in range(0, len(l_i), bIV)]
-                assert l_l_i[0]==l_l_i[-1],'Please adjust confs.bIV'
+                assert len(l_l_i[0])==len(l_l_i[-1]),f'Please adjust confs.bIV{l_l_i}'
                 del l_i
                 for _l_i in l_l_i:
                     assert len(_l_i)==bIV,'Please adjust confs.bIV'
