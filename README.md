@@ -8,6 +8,13 @@ Generalizable Single-view Object Pose Estimation by Two-side Generating and Matc
 
 ![poster](media/poster.jpg)
 
+
+### Abstract
+
+**Key word**: Sparse view object/camera pose estimation
+
+> In this paper, we present a novel generalizable object pose estimation method to determine the object pose using only one RGB image. Unlike traditional approaches that rely on instance-level object pose estimation and necessitate extensive training data, our method offers generalization to unseen objects without extensive training, operates with a single reference image of the object, and eliminates the need for 3D object models or multiple views of the object. These characteristics are achieved by utilizing a diffusion model to generate novel-view images and conducting a two-sided matching on these generated images. Quantitative experiments demonstrate the superiority of our method over existing pose estimation techniques across both synthetic and real-world datasets. Remarkably, our approach maintains strong performance even in scenarios with significant viewpoint changes, highlighting its robustness and versatility in challenging conditions.
+
 ## Setup
 
 Please refer to [Extreme-Two-View-Geometry-From-Object-Poses-with-Diffusion-Models](https://github.com/scy639/Extreme-Two-View-Geometry-From-Object-Poses-with-Diffusion-Models)
@@ -36,6 +43,14 @@ The current code version assumes that the input images:
     month     = {February},
     year      = {2025},
     pages     = {545-556}
+}
+@misc{sun2024extreme,
+      title={Extreme Two-View Geometry From Object Poses with Diffusion Models}, 
+      author={Yujing Sun and Caiyi Sun and Yuan Liu and Yuexin Ma and Siu Ming Yiu},
+      year={2024},
+      eprint={2402.02800},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
